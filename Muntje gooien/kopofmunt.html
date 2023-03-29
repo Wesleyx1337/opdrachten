@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gooi kop of munt</title>
+    <script>
+    function gooiKopMunt(){
+        var gooiKopMunt = Math.random();
+        if(gooiKopMunt <= 0.5){
+            document.getElementById("showResult").innerHTML = "Kop";
+        }
+        else{
+            document.getElementById("showResult").innerHTML = "Munt";
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <h1>Gooi kop of munt</h1>
+    <button onclick="gooiKopMunt()">Gooi kop of munt</button>
+    <p id="showResult"></p>
+</body>
+</html>

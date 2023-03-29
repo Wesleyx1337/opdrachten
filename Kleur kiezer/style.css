@@ -1,0 +1,23 @@
+.Default1 {
+    background-color: rgb(255, 255, 255);
+}
+
+.Border {
+    color: blue;
+    background-color: aqua;
+    width: 204px;
+    border-style: double; width: 100px;
+}
+
+.BodyRood {
+    background-color: red;
+
+}
+
+.BodyBlauw {
+    background-color: blue;
+}
+
+.BodyGroen {
+    background-color: green;
+}

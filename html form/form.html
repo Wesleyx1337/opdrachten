@@ -1,0 +1,83 @@
+<div class="html">
+    <h1>form opdracht</h1>
+    <form method="post" action="http://cscie12.dce.harvard.edu/echo">
+        <fieldset style="padding:16px;background-color:white">
+            <legend>Gegevens</legend>
+            <p>
+                <label for="fname">Voornaam </label>
+                <br/>
+                <input   type="text" name="fname" id="fname" size="30" /> </p>
+            <p>
+                <label for="lname">Achternaam </label>
+                <br/>
+                <input  type="text" name="lname" id="lname" size="30" /> </p>
+        </fieldset>
+        <fieldset style="padding:16px;background-color: white">
+            <legend>Vragen</legend>
+            <p>
+                Kies drinken:
+                <br/>
+                <input   type="radio" name="drink" id="coffee" value="coffee" />
+                <label for="coffee">Koffie</label>
+                <br/>
+                <input  checked="checked" type="radio" name="drink" id="tea" value="tea" />
+                <label for="tea">thee</label>
+                <br/>
+                <input   type="radio" name="drink" id="hotchoc" value="hot_chocolate" />
+                <label for="hotchoc">chocomel</label>
+                <br/>
+            </p>
+            <p> Favoriete ijssoort:
+                <br/>
+                <input   type="checkbox" name="icecream" id="icecream_chocolate" value="chocolate" />
+                <label for="icecream_chocolate">Chocolade</label>
+                <br/>
+                <input   type="checkbox" name="icecream" id="icecream_hcp" value="herrell's chocolate pudding" />
+                <label for="icecream_hcp">Chocolade Pudding</label>
+                <br/>
+                <input  checked="checked" type="checkbox" name="icecream" id="icecream_cpb" value="chocolate peanut butter" />
+                <label for="icecream_cpb">Chocolade Pindakaas</label>
+                <br/>
+                <input   type="checkbox" name="icecream" id="icecream_vanilla" value="vanilla" />
+                <label for="icecream_vanilla">Vanille</label>
+                <br/>
+                <input   type="checkbox" name="icecream" id="icecream_strawberry" value="strawberry" />
+                <label for="icecream_strawberry">Aardbij</label>
+            </p>
+            <p>
+                <label for="school">Selecteer een school:</label>
+                <br/>
+                <select   name="school" id="school">
+                    <optgroup label="Overijssel">
+                        <option>Deltion College</option>
+                        <option>Landstede</option>
+                        <option>ROV Twente</option>
+                    </optgroup>
+                    <optgroup label="Gelderland">
+                        <option>RSG Nov</option>
+                        <option>Thomas a Kempis College</option>
+                        <option>Het Westeraam</option>
+                    </optgroup>
+                </select>
+            </p>
+            <p>
+                <label for="comments">Extra*:</label>
+                <br/>
+                <textarea   rows="5" cols="32" name="comments" id="comments"></textarea>
+            </p>
+        </fieldset>
+        <p>
+            <input   type="submit" />
+        </p>
+    </form>
+</div>
+
+        
+        
+    </div>
+</main>
+<script>
+    let smallnav=document.getElementById("smallnav"),aside=document.getElementById("right");function toggleNav(){"block"===smallnav.style.display?(smallnav.style.display="none",aside.style.display="none"):window.innerWidth<=1280&&(smallnav.style.display="block",aside.style.display="block")}window.onresize=l=>{window.innerWidth>1280&&(smallnav.style.display="none",aside.style.display="block"),window.innerWidth<=1280&&(aside.style.display="none",smallnav.style.display="none")};
+</script>
+</body>
+</html>

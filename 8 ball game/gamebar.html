@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <title>8 Ball Game</title>
+</head>
+
+<body>
+    <h1>8 Ball Game</h1>
+    <p>Stel je vraag:</p>
+    <input type="text" id="vraag">
+    <button onclick="startbar()">Vraag</button>
+    <div class="progress-bar"> 
+    <div class="progress-bar-fill"></div> 
+    <p id="antwoord"></p>
+    </div>
+    <script>
+        const antwoorden = [
+            "zeker",
+            "Ja tuurlijk",
+            "Gewoon nee",
+            "100%",
+            "Tuurlijk niet",
+            "Sowieso niet",
+        ];
+
+        function antwoordVraag() {
+            let vraag = document.getElementById('vraag').value;
+            let antwoordIndex = Math.floor(Math.random() * antwoorden.length);
+            let antwoord = antwoorden[antwoordIndex];
+            document.getElementById('antwoord').innerHTML = antwoord;
+        }
+
+        function startbar() {
+            let progressBar = document.querySelector('.progress-bar-fill'); 
+            let totalWidth = 0; 
+            let progressInterval = setInterval(function() { 
+                if (totalWidth >= 100) { 
+                    clearInterval(progressInterval);
+                    antwoordVraag(); 
+                } else { 
+                    totalWidth++; 
+                    progressBar.style.width = totalWidth + "%"; 
+                } 
+            }, 30); 
+        }
+    </script>
+</body>
+<style>
+    
+    body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #FDFDFD;
+        font-family: Arial, sans-serif;
+        background-image: url('https://giffiles.alphacoders.com/209/209037.gif'); 
+        background-repeat: no-repeat; 
+        background-size: cover;
+    }
+
+    h1 {
+        font-size: 3em;
+        color: #15ff00;
+        font-weight: bold;
+        text-shadow: 0px 0px 15px #4dff00;
+    }
+
+    p {
+        font-size: 1.5em;
+        color: #ffffff;
+        text-shadow: 0px 0px 5px  #ffffff;
+        margin-bottom: 10px;
+    }
+
+    input {
+        padding: 10px;
+        border: 5px solid #ffffff;
+        border-radius: 5px;
+        background-color: #00cf0389;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 10px;
+        border: 5px solid #ffffff;
+        text-shadow: 0px 0px 5px  #ffffff;
+        border-radius: 5px;
+        font-size: 1.5em;
+        color: #FFFFFF;
+        background-color: #2a2a2a15;
+        margin-bottom: 10px;
+    }
+
+    #answer {
+        font-size: 1.5em;
+        color: #2A2A2A;
+        margin-bottom: 10px;
+    }
+
+    .progress-bar { 
+    width: 200px; 
+    background: rgba(221, 221, 221, 0); 
+    padding: 3px; 
+    border-radius: 3px;
+    margin-left: 570px;
+    margin-right: auto;
+    width: 300px;
+    }
+
+    .progress-bar-fill { 
+        height: 20px; 
+        background: #11fb00e0;
+        width: 0%; 
+        border-radius: 3px; 
+        transition: width 0.5s ease-in-out; 
+    }
+
+    .foto {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+</html>

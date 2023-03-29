@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: #000000;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+#container {
+    margin: 0 auto;
+    width: 600px;
+}
+
+#game {
+    margin: 0 auto;
+    width: 500px;
+    border: 1px solid #FFFFFF;
+    padding: 10px;
+    text-align: center;
+}
+
+#game img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+#game .selection {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#game .selection button {
+    background-color: #FFFFFF;
+    width: 100px;
+    height: 100px;
+    font-size: 2em;
+    color: #000000;
+    margin: 5px;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+#game .result {
+    margin-top: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+</style>
+</head>
+<body>
+<h1>Steen, papier, schaar</h1>
+
+<div id="container">
+    <div id="game">
+        <div class="selection">
+            <button id="steen">Steen</button>
+            <button id="papier">Papier</button>
+            <button id="schaar">Schaar</button>
+        </div>
+        <div class="result">
+        </div>
+    </div>
+</div>
+
+<script>
+var moves = ["steen", "papier", "schaar"];
+
+var playerMove, computerMove;
+
+function setResult(result) {
+    document.querySelector(".result").innerHTML = result;
+}
+
+function computerPlay() {
+    return moves[Math.floor(Math.random() * 3)];
+}
+
+function playRound(playerMove, computerMove) {
+    if (playerMove == computerMove) {
+        return "Gelijkspel!";
+    } else if (playerMove == "steen" && computerMove == "schaar") {
+        return "Je wint! Steen wint van schaar.";
+    } else if (playerMove == "papier" && computerMove == "steen") {
+        return "Je wint! Papier wint van steen.";
+    } else if (playerMove == "schaar" && computerMove == "papier") {
+        return "Je wint! Schaar wint van papier.";
+    } else {
+        return "Je verliest. " + computerMove + " wint van " + playerMove + ".";
+    }
+}
+
+document.querySelector("#steen").addEventListener("click", function () {
+    playerMove = "steen";
+    computerMove = computerPlay();
+    setResult(playRound(playerMove, computerMove));
+});
+
+document.querySelector("#papier").addEventListener("click", function () {
+    playerMove = "papier";
+    computerMove = computerPlay();
+    setResult(playRound(playerMove, computerMove));
+});
+
+document.querySelector("#schaar").addEventListener("click", function () {
+    playerMove = "schaar";
+    computerMove = computerPlay();
+    setResult(playRound(playerMove, computerMove));
+});
+
+</script>
+
+</body>
+</html>
